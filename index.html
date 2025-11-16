@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectroShop - Modern Electrical Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Promotional Banner -->
+    <div class="promo-banner">
+        <div class="promo-content">
+            <i class="fas fa-bolt"></i>
+            <span>Flash Sale! Get up to 40% OFF on selected items - Limited Time Only!</span>
+            <button class="promo-close" id="promoClose"><i class="fas fa-times"></i></button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-bolt"></i>
+                <span>ElectroShop</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#products" class="nav-link">Products</a></li>
+                <li><a href="#categories" class="nav-link">Categories</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search products...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <button class="icon-btn" id="cartBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+                <button class="icon-btn" id="userBtn">
+                    <i class="fas fa-user"></i>
+                </button>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Power Your World</h1>
+                <p class="hero-subtitle">Discover the latest in electrical technology and innovation</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary">Shop Now</button>
+                    <button class="btn btn-secondary">View Catalog</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-card card-1">
+                    <div class="card-image lighting-img"></div>
+                    <p>Smart Lighting</p>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="card-image power-img"></div>
+                    <p>Power Solutions</p>
+                </div>
+                <div class="floating-card card-3">
+                    <div class="card-image electronics-img"></div>
+                    <p>Electronics</p>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="category-grid">
+                <div class="category-card" data-category="lighting">
+                    <div class="category-image">
+                        <div class="category-img lighting-category"></div>
+                    </div>
+                    <h3>Lighting</h3>
+                    <p>LED & Smart Bulbs</p>
+                </div>
+                <div class="category-card" data-category="cables">
+                    <div class="category-image">
+                        <div class="category-img cables-category"></div>
+                    </div>
+                    <h3>Cables & Wires</h3>
+                    <p>Premium Quality</p>
+                </div>
+                <div class="category-card" data-category="switches">
+                    <div class="category-image">
+                        <div class="category-img switches-category"></div>
+                    </div>
+                    <h3>Switches</h3>
+                    <p>Modern Designs</p>
+                </div>
+                <div class="category-card" data-category="tools">
+                    <div class="category-image">
+                        <div class="category-img tools-category"></div>
+                    </div>
+                    <h3>Tools</h3>
+                    <p>Professional Grade</p>
+                </div>
+                <div class="category-card" data-category="accessories">
+                    <div class="category-image">
+                        <div class="category-img accessories-category"></div>
+                    </div>
+                    <h3>Accessories</h3>
+                    <p>Essential Items</p>
+                </div>
+                <div class="category-card" data-category="smart">
+                    <div class="category-image">
+                        <div class="category-img smart-category"></div>
+                    </div>
+                    <h3>Smart Devices</h3>
+                    <p>IoT Solutions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deals Section -->
+    <section class="deals-section">
+        <div class="container">
+            <div class="deals-banner">
+                <div class="deals-content">
+                    <span class="deals-badge">Limited Time Offer</span>
+                    <h2>Flash Deals of the Day</h2>
+                    <p>Save up to 40% on trending electrical products</p>
+                    <div class="countdown" id="countdown">
+                        <div class="countdown-item">
+                            <span class="countdown-value" id="hours">00</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-value" id="minutes">00</span>
+                            <span class="countdown-label">Minutes</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-value" id="seconds">00</span>
+                            <span class="countdown-label">Seconds</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary">Shop Deals Now</button>
+                </div>
+                <div class="deals-products">
+                    <div class="deal-card">
+                        <div class="discount-badge">-35%</div>
+                        <div class="deal-product-img smart-bulb-img"></div>
+                        <h4>Smart LED Bulb</h4>
+                        <div class="deal-price">
+                            <span class="old-price">$45.99</span>
+                            <span class="new-price">$29.99</span>
+                        </div>
+                    </div>
+                    <div class="deal-card">
+                        <div class="discount-badge">-40%</div>
+                        <div class="deal-product-img smart-hub-img"></div>
+                        <h4>Smart Home Hub</h4>
+                        <div class="deal-price">
+                            <span class="old-price">$199.99</span>
+                            <span class="new-price">$119.99</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="products-header">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="lighting">Lighting</button>
+                    <button class="filter-btn" data-filter="cables">Cables</button>
+                    <button class="filter-btn" data-filter="switches">Switches</button>
+                    <button class="filter-btn" data-filter="tools">Tools</button>
+                    <button class="filter-btn" data-filter="smart">Smart</button>
+                </div>
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Free Shipping</h3>
+                    <p>On orders over $50</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure Payment</h3>
+                    <p>100% protected</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-undo"></i>
+                    </div>
+                    <h3>Easy Returns</h3>
+                    <p>30-day return policy</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Dedicated help</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>John Smith</h4>
+                            <div class="testimonial-rating">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Excellent quality products and fast delivery! The smart home devices I purchased have transformed my house. Highly recommend ElectroShop!"</p>
+                    <div class="testimonial-date">2 weeks ago</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Sarah Johnson</h4>
+                            <div class="testimonial-rating">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Best electrical shop online! Their customer service is outstanding and the products are top-notch. Will definitely shop here again."</p>
+                    <div class="testimonial-date">1 month ago</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Michael Brown</h4>
+                            <div class="testimonial-rating">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Great prices and amazing selection. Found everything I needed for my home renovation project. The website is easy to use too!"</p>
+                    <div class="testimonial-date">3 weeks ago</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="brands">
+        <div class="container">
+            <h2 class="section-title">Trusted Brands We Carry</h2>
+            <div class="brands-slider">
+                <div class="brand-item">
+                    <div class="brand-logo">
+                        <i class="fas fa-bolt"></i>
+                        <span>PowerTech</span>
+                    </div>
+                </div>
+                <div class="brand-item">
+                    <div class="brand-logo">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>LumiLED</span>
+                    </div>
+                </div>
+                <div class="brand-item">
+                    <div class="brand-logo">
+                        <i class="fas fa-microchip"></i>
+                        <span>SmartHome</span>
+                    </div>
+                </div>
+                <div class="brand-item">
+                    <div class="brand-logo">
+                        <i class="fas fa-plug"></i>
+                        <span>ConnectPro</span>
+                    </div>
+                </div>
+                <div class="brand-item">
+                    <div class="brand-logo">
+                        <i class="fas fa-tools"></i>
+                        <span>ToolMaster</span>
+                    </div>
+                </div>
+                <div class="brand-item">
+                    <div class="brand-logo">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>SafeElectric</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About ElectroShop</h2>
+                    <p>We are your trusted partner for all electrical needs. With over 15 years of experience, we provide high-quality electrical products and solutions for residential and commercial applications.</p>
+                    <p>Our commitment to excellence and customer satisfaction has made us a leading name in the electrical industry.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <h3>15+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat">
+                            <h3>5000+</h3>
+                            <p>Products</p>
+                        </div>
+                        <div class="stat">
+                            <h3>50K+</h3>
+                            <p>Happy Customers</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-img-placeholder"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What payment methods do you accept?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept all major credit cards, PayPal, Apple Pay, Google Pay, and bank transfers. All payments are processed securely through our encrypted payment gateway.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How long does shipping take?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Standard shipping takes 3-5 business days. Express shipping is available and takes 1-2 business days. Free shipping is available on orders over $50.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What is your return policy?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer a 30-day return policy on all products. Items must be in original condition with all packaging. Return shipping is free for defective items.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Do you offer warranties on products?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, all products come with manufacturer warranties ranging from 1-5 years depending on the product. Extended warranties are available for purchase.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Can I track my order?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, once your order ships, you'll receive a tracking number via email. You can track your order status in real-time through our website or the carrier's website.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Do you offer installation services?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We partner with certified electricians in most areas. Contact our support team to arrange professional installation for your purchased products.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>123 Electric Avenue, Tech City, TC 12345</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@electroshop.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Hours</h4>
+                            <p>Mon - Sat: 9:00 AM - 8:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="text" placeholder="Subject" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-bolt"></i>
+                        <span>ElectroShop</span>
+                    </div>
+                    <p>Your trusted source for quality electrical products and solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on new products and offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ElectroShop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Shopping Cart</h2>
+                <button class="close-btn" id="closeCart">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be dynamically loaded here -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">$0.00</span>
+                </div>
+                <button class="btn btn-primary btn-block">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Quick View Modal -->
+    <div class="quick-view-modal" id="quickViewModal">
+        <div class="quick-view-content">
+            <button class="close-btn" id="closeQuickView">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="quick-view-body">
+                <div class="quick-view-image" id="quickViewImage">
+                    <div class="quick-view-product-img" id="quickViewIcon"></div>
+                </div>
+                <div class="quick-view-info">
+                    <span class="quick-view-category" id="quickViewCategory">Category</span>
+                    <h2 id="quickViewTitle">Product Name</h2>
+                    <div class="quick-view-rating" id="quickViewRating">★★★★★</div>
+                    <p class="quick-view-description">High-quality electrical product with advanced features and reliable performance. Perfect for residential and commercial applications.</p>
+                    <div class="quick-view-price" id="quickViewPrice">$0.00</div>
+                    <div class="quick-view-features">
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Energy Efficient</li>
+                            <li><i class="fas fa-check"></i> Long Lasting</li>
+                            <li><i class="fas fa-check"></i> Easy Installation</li>
+                            <li><i class="fas fa-check"></i> Warranty Included</li>
+                        </ul>
+                    </div>
+                    <div class="quick-view-actions">
+                        <div class="quantity-selector">
+                            <button class="qty-btn" id="qtyMinus">-</button>
+                            <input type="number" value="1" min="1" id="qtyInput">
+                            <button class="qty-btn" id="qtyPlus">+</button>
+                        </div>
+                        <button class="btn btn-primary" id="quickAddToCart">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Account Modal -->
+    <div class="user-modal" id="userModal">
+        <div class="user-modal-content">
+            <button class="close-btn" id="closeUser">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <!-- User Dashboard (shown when logged in) -->
+            <div class="user-dashboard" id="userDashboard" style="display: none;">
+                <div class="dashboard-header">
+                    <div class="user-avatar">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <h2 id="userName">Welcome Back!</h2>
+                    <p class="user-email" id="userEmail">user@example.com</p>
+                </div>
+                
+                <div class="dashboard-menu">
+                    <button class="dashboard-item">
+                        <i class="fas fa-box"></i>
+                        <div>
+                            <h4>My Orders</h4>
+                            <p>View order history</p>
+                        </div>
+                    </button>
+                    <button class="dashboard-item">
+                        <i class="fas fa-heart"></i>
+                        <div>
+                            <h4>Wishlist</h4>
+                            <p>Saved items</p>
+                        </div>
+                    </button>
+                    <button class="dashboard-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Addresses</h4>
+                            <p>Manage shipping addresses</p>
+                        </div>
+                    </button>
+                    <button class="dashboard-item">
+                        <i class="fas fa-credit-card"></i>
+                        <div>
+                            <h4>Payment Methods</h4>
+                            <p>Saved payment options</p>
+                        </div>
+                    </button>
+                    <button class="dashboard-item">
+                        <i class="fas fa-user-cog"></i>
+                        <div>
+                            <h4>Account Settings</h4>
+                            <p>Update profile information</p>
+                        </div>
+                    </button>
+                    <button class="dashboard-item logout-btn" id="logoutBtn">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <div>
+                            <h4>Logout</h4>
+                            <p>Sign out of your account</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Login Form -->
+            <div class="auth-form" id="loginForm">
+                <div class="auth-header">
+                    <h2>Welcome Back</h2>
+                    <p>Sign in to your account</p>
+                </div>
+                <form id="loginFormElement">
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                    </div>
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" class="forgot-link">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                </form>
+                <div class="auth-divider">
+                    <span>OR</span>
+                </div>
+                <div class="social-login">
+                    <button class="social-btn google-btn">
+                        <i class="fab fa-google"></i>
+                        Continue with Google
+                    </button>
+                    <button class="social-btn facebook-btn">
+                        <i class="fab fa-facebook-f"></i>
+                        Continue with Facebook
+                    </button>
+                </div>
+                <div class="auth-footer">
+                    <p>Don't have an account? <a href="#" id="showSignup">Sign Up</a></p>
+                </div>
+            </div>
+
+            <!-- Signup Form -->
+            <div class="auth-form" id="signupForm" style="display: none;">
+                <div class="auth-header">
+                    <h2>Create Account</h2>
+                    <p>Join ElectroShop today</p>
+                </div>
+                <form id="signupFormElement">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="signupName" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" id="signupEmail" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="signupPassword" placeholder="Create a password" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Confirm Password</label>
+                        <input type="password" id="signupConfirmPassword" placeholder="Confirm your password" required>
+                    </div>
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" required>
+                            <span>I agree to the Terms & Conditions</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+                </form>
+                <div class="auth-divider">
+                    <span>OR</span>
+                </div>
+                <div class="social-login">
+                    <button class="social-btn google-btn">
+                        <i class="fab fa-google"></i>
+                        Sign up with Google
+                    </button>
+                    <button class="social-btn facebook-btn">
+                        <i class="fab fa-facebook-f"></i>
+                        Sign up with Facebook
+                    </button>
+                </div>
+                <div class="auth-footer">
+                    <p>Already have an account? <a href="#" id="showLogin">Sign In</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" id="loadingSpinner">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
